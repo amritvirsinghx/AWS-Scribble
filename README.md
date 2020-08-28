@@ -1,5 +1,5 @@
 ## AWS-Scribble
-This repository is refernece for Cloud infrastructure practices, primarly focuing on AWS. If you are just starting to experiment with AWS, you can take reference. I will add more content as I go along exporing web services like Athena, Glue and Deploying cloud infrastucture as code via Terraform. 
+This repository is reference for Cloud infrastructure practices, primarly focuing on AWS. If you are just starting to experiment with AWS, you can take reference. I will add more content as I go along exporing web services like Athena, Glue and Deploying cloud infrastucture as code via Terraform. 
 
 ![](https://www.cloudoye.com/images/blog/aws-page-banner.png)
 

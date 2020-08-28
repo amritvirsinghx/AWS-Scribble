@@ -1,2 +1,2 @@
-logon.pem
+*.pem
 .terraform/*

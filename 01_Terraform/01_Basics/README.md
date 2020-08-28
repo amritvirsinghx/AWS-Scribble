@@ -9,13 +9,13 @@ After installing terraform using chocolatey, if you run the following command to
 Terraform
 ~~~
 
+![](https://github.com/amritvirsinghx/AWS-Scribble/blob/master/01_Terraform/01_Basics/.images/confirm.JPG)
+
 ### 2) Initializing Terraform
 Write a basic "tf" document (in our case _Basic_deployment.tf_ to launch infrastucture via terraform and then intialize terraform using following command in same location as of your .tf file
 ~~~
 Terraform init
 ~~~
-
-You will get the following output on successful initialization
 
 ### 3) Installing Pre-requisites and Error Debugging
 
@@ -28,6 +28,8 @@ choco install awscli
 
   on successful install you can check it as follows:
   
+![](https://github.com/amritvirsinghx/AWS-Scribble/blob/master/01_Terraform/01_Basics/.images/aws%20confirm.JPG)
+  
   Finally configure it with your IAM using:
   
   ~~~
@@ -36,14 +38,18 @@ choco install awscli
   
 - Make your your IAM has full EC2 access:
 
+![](https://github.com/amritvirsinghx/AWS-Scribble/blob/master/01_Terraform/01_Basics/.images/ec2%20full%20access.JPG)
 
 ### 4) Deploying Terraform
-  Then use the following command to apply and launch the infrastucture via terraform
+  Then use the following command to apply and launch the infrastucture via terraform, input _yes_ when promted
 ~~~
 Terrafrom apply
 ~~~
 
+![](https://github.com/amritvirsinghx/AWS-Scribble/blob/master/01_Terraform/01_Basics/.images/terraform%20apply.JPG)
+
   Deployed instance can be viewed in console:
 
+![](https://github.com/amritvirsinghx/AWS-Scribble/blob/master/01_Terraform/01_Basics/.images/instance.JPG)
 
-
+## Your Instance is successfully deployed via Terraform

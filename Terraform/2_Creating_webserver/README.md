@@ -10,7 +10,7 @@ Min requirements:
 ## Guide:
 1) Clone the repo in your local machine
 2) Open folder _2_Creating_webserver_. this will be your working directory
-3) Configure your AWS account to your IAM user using following command:
+3) Configure your AWS account to your IAM user (with EC2 and S3 Full Access) using following command:
 ~~~
 aws configure
 ~~~

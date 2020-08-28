@@ -43,7 +43,7 @@ resource "aws_instance" "Redhat"{
     ami = "ami-098f16afa9edf40be"
     instance_type="t2.micro"
     security_groups=["${aws_security_group.ssh_http.name}"]
-    key_name = "logon" #specify your key here
+    key_name = "EC2_key" #specify your key here
     user_data = <<-EOF
 		#! /bin/bash
         sudo yum install httpd -y

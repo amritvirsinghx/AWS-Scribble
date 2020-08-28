@@ -35,22 +35,25 @@ resource "aws_security_group" "ssh_http"{
 
 /*
 creating instance
-type :ubuntu
+type :Redhat
 arch: t2.micro
 */
 
-resource "aws_instance" "ubuntu"{
-    ami = "ami-0bcc094591f354be2"
+resource "aws_instance" "Redhat"{
+    ami = "ami-098f16afa9edf40be"
     instance_type="t2.micro"
-    security_groups=[${aws_security_group.ssh_http.name}]
+    security_groups=["${aws_security_group.ssh_http.name}"]
     key_name = "logon" #specify your key here
     user_data = <<-EOF
-        #! /bin/bash
+		#! /bin/bash
         sudo yum install httpd -y
-        sudo systemctl start httd
+        sudo systemctl start httpd
         sudo systemctl enable httpd
-        echo "<h1> Sample Website created via terrafrom </h1>" >> /var/www/html/index.html
+        echo "<h1> Deployed via Terraform<br>This is my first live infrastructure deployment<br></h1><h2>Resources:<br>
+        OS:Redhat<br>Compute power: T2.Micro <br> Security groups configured<br>SSH Port: 22 <br> HTTP Port:80
+        </h2>">> /var/www/html/index.html
     EOF
     tags ={
         Name = "WebServer"
+    }
 }

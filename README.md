@@ -6,7 +6,13 @@ This repository is reference for Cloud infrastructure practices, primarly focuin
 
 ## Navigating repository:
 This repository consists of:
-### 1) Terraform
+### AWS Athena
+- **01_Quering_database** - Hand-on for running custom SQL query on object stored in S3
+
+### AWS Glue
+- **01_Basic_ETL_pyspark** - Writing a custom pyspark script to perform ETL via AWS Glue
+
+### Terraform
 - **01_Basics** - Installing terrafrom, interacting with AWS CLI and deploying an EC2 instance
 - **02_Creating_webserver** - Deploying end to end sample website via Terraform with cloud infracsture of RedHat-t2.micro
 

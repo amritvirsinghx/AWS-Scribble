@@ -14,15 +14,15 @@ Min requirements:
 ~~~
 aws configure
 ~~~
-![](https://github.com/amritvirsinghx/AWS-Scribble/blob/master/Terraform/2_Creating_webserver/.images/awsconfigure.JPG)
+![](.images/awsconfigure.JPG)
 
 4) Download a key pair for your EC2 instance and place it in the same location
 
-![](https://github.com/amritvirsinghx/AWS-Scribble/blob/master/Terraform/2_Creating_webserver/.images/keypair.JPG)
+![](.images/keypair.JPG)
 
 5) Set your _ami, instance_type_ and _key_name_ variables
 
-![](https://github.com/amritvirsinghx/AWS-Scribble/blob/master/Terraform/2_Creating_webserver/.images/resources.JPG)
+![](.images/resources.JPG)
 
 6) Change your HTML code for index page or you can even attach a custom HTML file
 7) To Deploy type the following commands in your terminal in same location (type "yes" when prompted)
@@ -32,11 +32,11 @@ terraform apply
 ~~~
 8) Access your website your using _IPv4 Public IP_ from the console, You can even SSH on your EC2 instance if you wish.
 
-![](https://github.com/amritvirsinghx/AWS-Scribble/blob/master/Terraform/2_Creating_webserver/.images/publicip.JPG)
+![](.images/publicip.JPG)
 
 Deployed:
 
-![](https://github.com/amritvirsinghx/AWS-Scribble/blob/master/Terraform/2_Creating_webserver/.images/Deployement.JPG)
+![](.images/Deployement.JPG)
 
 9) To Destroy your intance type:
 ~~~

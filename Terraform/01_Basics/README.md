@@ -1,8 +1,8 @@
-### Objective
+## Objective
 This document is the basic overview of the steps I perfromed to launch my first Terraform infrastructure. Follow the setps along
 
-### Steps to Replicate
-#### 1) Installing Chocolaty and Terraform 
+## Steps to Replicate
+#### 1) Installing Chocolatey and Terraform 
 I chose chocolatey to install terraform you can use download installer from official site or use other package manager as per your needs.
 
 After installing terraform using chocolatey, if you run the following command to check you will get the output something like this

@@ -1,4 +1,4 @@
-### What is Terraform? 
+### WHAT IS TERRAFORM? 
 Terraform is a tool made by Hashicorp for building, changing, and versioning infrastructure safely and efficiently. Terraform can manage existing and popular service providers ( aws, azure, Google cloud) as well as custom in-house solutions.
 
 ![](https://cloudblogs.microsoft.com/uploads/prod/sites/37/2018/04/hashicorp-terraform-banner.png)
@@ -6,7 +6,7 @@ Terraform is a tool made by Hashicorp for building, changing, and versioning inf
 Reference:
 https://www.terraform.io/docs/providers/aws/index.html
 
-### Basic Steps to provision
+### STEPS TO PROVISION
 
 1) Download the terraform binary file 
 https://www.terraform.io/downloads.html

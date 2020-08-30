@@ -1,27 +1,28 @@
-#importing Libaries
-
-#import python modules
+#import python libraries
+import sys
 from datetime import datetime
 
-#import pyspark modules
-from pyspark.context import SparkContent
-import pyspark.sql.functions as F
+#import pyspark libraries
+from pyspark.context import SparkContext
+import pyspark.sql.functions as f
 
-#import glue modules
-from awsglue.utils import  getResolvedOptions
-from awsglue.context import GlueContext
+#import glue libraries
+from awsglue.transforms import *
+from awsglue.utils import getResolvedOptions
 from awsglue.dynamicframe import DynamicFrame
-from awsglue.job import job
+from awsglue.context import GlueContext
+from awsglue.job import Job
 
-#initialize context and session
-spark_context = SparkContext.getOrCreate()
-glue_context = GlueContext(spark_context)
-session = glue_context.spark_session
+#initialize session
+sc = SparkContext.getOrCreate()
+glue_context = GlueContext(sc)
+spark = glue_context.spark_session
+job = Job(glue_context)
 
 #Parameters
 glue_db = "movies-db"
-glue_tbl = "read"
-s3_write_path ="s3://write"
+glue_tbl = "awsglueinput"
+s3_write_path ="s3://awsglueout"
 
 #Extract Data
 
@@ -30,7 +31,7 @@ dt_start = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 print("Start time:", dt_start)
 
 #read movie data to glue dynamic frame
-dynamic_frame_read = glue_context.create_dynamic_frame.from_catelog(database = glue_db,table_name = glue_tbl)
+dynamic_frame_read = glue_context.create_dynamic_frame.from_catalog(database = glue_db,table_name = glue_tbl)
 
 #convert dynamic frame to data frame to use standard pyspark functions
 data_frame = dynamic_frame_read.toDF()
@@ -38,14 +39,13 @@ data_frame = dynamic_frame_read.toDF()
 #Transform and modify data
 
 #creating decade column from year
-decade_col = F.floor(data_frame["year"]/10)*10
+decade_col = f.floor(data_frame["year"]/10)*10
 data_frame = data_frame.withColumn("decade",decade_col)
 
 #group by decade: Cound movies, get average rating
-data_frame_aggregated = data_frame.groupby("decade") \
-    .agg( 
-    f.count(f.col("movie_title")).alias('movie_count'), \
-    f.mean(f.col("rating")).alias("rating_mean") \ 
+data_frame_aggregated = data_frame.groupby("decade").agg( 
+    f.count(f.col("movie_title")).alias('movie_count'),
+    f.mean(f.col("rating")).alias("rating_mean"),
     ) 
 
 #sort by the number of movies per the decade

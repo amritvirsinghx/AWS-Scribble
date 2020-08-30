@@ -1,13 +1,13 @@
-# KEY NOTE
+## OBJECTIVE
 In this code we used terraform to instantiate a Redhat EC2 instance on AWS and deployed a sample website on top of it 
 
-## How to use this? 
+## PRE-REQUISITES 
 Min requirements:
 - AWS Account and CLI installed
 - Terraform installed (if you need to installed it kindly refer 01_Basics)
 - Some Knowlegde of AWS security groups, VPC and subnets 
 
-## Guide:
+## STEPS OF REPLICATE
 1) Clone the repo in your local machine
 2) Open folder _2_Creating_webserver_. this will be your working directory
 3) Configure your AWS account to your IAM user (with EC2 and S3 Full Access) using following command:
